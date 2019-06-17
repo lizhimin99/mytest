@@ -18,7 +18,7 @@ services:
   CORE:
 #    environment:
 #      - NODE_ENV=Production_hualian
-    image: 'nuclias/nuclias_connect_core'
+    image: 'dlink123456/nuclias_connect_core:1.0.0.36'
     restart: 'always'
     ports:
       - '8443:8443'
@@ -37,7 +37,7 @@ services:
   WEB:
 #    environment:
 #      - NODE_ENV=Production_hualian
-    image: 'nuclias/nuclias_connect_web'
+    image: 'nuclias/connect_web'
     restart: 'always'
     ports:
       - '30001:30001'
@@ -50,7 +50,7 @@ services:
     network_mode: host
     depends_on:
       - CORE
-    command: './nuclias_connect_web'
+    command: './nc_web.exe'
     privileged: true 
 
 volumes:
