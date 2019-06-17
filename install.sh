@@ -17,4 +17,5 @@ fi
 cd $TMP_NUCLIAS_CONNECT_config
 curl -o systemconfig.json https://raw.githubusercontent.com/lizhimin99/mytest/master/config/systemconfig.json
 cd $TMP_NUCLIAS_CONNECT
- $TMP_NUCLIAS_CONNECT"/init.sh"
+
+sudo sh $TMP_NUCLIAS_CONNECT"/init.sh"
