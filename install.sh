@@ -11,5 +11,7 @@ curl -o init.sh https://raw.githubusercontent.com/lizhimin99/mytest/master/init.
 curl -o docker-compose.yml https://raw.githubusercontent.com/lizhimin99/mytest/master/docker-compose.yml
 curl -o entrypoint-initdb.sh https://raw.githubusercontent.com/lizhimin99/mytest/master/entrypoint-initdb.sh
 curl -o appconfig.json https://raw.githubusercontent.com/lizhimin99/mytest/master/appconfig.json
-curl -o config/systemconfig.json https://raw.githubusercontent.com/lizhimin99/mytest/master/config/systemconfig.json
+cd config
+curl -o systemconfig.json https://raw.githubusercontent.com/lizhimin99/mytest/master/config/systemconfig.json
+cd ../
 ./init.sh
