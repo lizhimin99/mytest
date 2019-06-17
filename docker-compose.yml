@@ -1,0 +1,59 @@
+version: '3'
+services:
+  DB:
+    image: 'mongo:3.6.11'
+#    restart: 'always'
+    ports:
+      - '27010:27010'
+    volumes:
+      - 'MONGO-DATA:/data/db'
+      - '/etc/localtime:/etc/localtime'
+      - './entrypoint-initdb.sh:/docker-entrypoint-initdb.d/entrypoint-initdb.sh'
+    network_mode: host
+#    environment:
+#      - MONGO_INITDB_ROOT_USERNAME=admin
+#      - MONGO_INITDB_ROOT_PASSWORD=admin
+    command: 'mongod --port 27010  --auth'
+ 
+  CORE:
+#    environment:
+#      - NODE_ENV=Production_hualian
+    image: 'nuclias/nuclias_connect_core'
+    restart: 'always'
+    ports:
+      - '8443:8443'
+      - '62992:62992'
+    volumes:
+      - './appconfig.json:/app/config/appconfig.json'
+#      - './dbConfig.js:/app/node_modules/DView-SP1-common/db/dbConfig.js'
+      - './log/core/logFiles:/app/logFiles'
+      - '/etc/localtime:/etc/localtime'
+    network_mode: host
+    depends_on:
+      - DB
+    command: './nuclias_connect_core'
+    privileged: true
+
+  WEB:
+#    environment:
+#      - NODE_ENV=Production_hualian
+    image: 'nuclias/nuclias_connect_web'
+    restart: 'always'
+    ports:
+      - '30001:30001'
+    volumes:
+      - './config/systemconfig.json:/app/config/systemconfig.json'
+      - './customer:/app/customer'
+#      - './dbConfig.js:/app/node_modules/DView-SP1-common/db/dbConfig.js'
+      - './log/web/logFiles:/app/logFiles'
+      - '/etc/localtime:/etc/localtime'
+    network_mode: host
+    depends_on:
+      - CORE
+    command: './nuclias_connect_web'
+    privileged: true 
+
+volumes:
+  MONGO-DATA:
+
+
