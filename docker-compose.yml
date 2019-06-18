@@ -1,6 +1,7 @@
 version: '3'
 services:
   DB:
+     container_name:mongo
     image: 'mongo:3.6.11'
 #    restart: 'always'
     ports:
@@ -18,7 +19,8 @@ services:
   CORE:
 #    environment:
 #      - NODE_ENV=Production_hualian
-    image: 'dlink123456/nuclias_connect_core:1.0.0.36'
+    container_name:nuclias_connect_core
+    image: 'nuclias/nuclias_connect_core:1.0.0.36'
     restart: 'always'
     ports:
       - '8443:8443'
@@ -37,7 +39,8 @@ services:
   WEB:
 #    environment:
 #      - NODE_ENV=Production_hualian
-    image: 'dlink123456/nuclias_connect_web:1.0.0.36'
+    container_name:nuclias_connect_web
+    image: 'nuclias/nuclias_connect_web:1.0.0.36'
     restart: 'always'
     ports:
       - '30001:30001'
