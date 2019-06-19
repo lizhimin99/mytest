@@ -191,6 +191,7 @@ echo ""
 echo -e "\033[36mNow initial set the database administrator account for Nuclias,
 please confirm is the first time set administrator account? [y/n]\033[0m"
 read k
+echo "input is : $k"
 if [ "$k" = "y" ];then
 	read -p "User Name：" name
 	if [ -n "$name" ]; then 
