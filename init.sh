@@ -35,7 +35,7 @@ if [ "$k" = "y" ];then
 fi
 
 
-docker-compose up -d
+# docker-compose up -d
 echo -e "\033[32mNuclias services are running...\033[0m"
 echo ""
 echo "-- commands list -----------------------"
