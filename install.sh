@@ -19,5 +19,5 @@ cd $TMP_NUCLIAS_CONNECT_config
 curl -o systemconfig.json https://raw.githubusercontent.com/lizhimin99/mytest/master/config/systemconfig.json
 cd $TMP_NUCLIAS_CONNECT
 echo 'download finished!'
-echo 'please run : ./init.sh  to install'
+echo 'please run :# cd $TMP_NUCLIAS_CONNECT . init.sh  to install'
 #sudo sh $TMP_NUCLIAS_CONNECT"/init.sh"
