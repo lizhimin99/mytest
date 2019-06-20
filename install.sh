@@ -22,3 +22,4 @@ echo 'Config files Download complete'
 echo 'STEP2 :Please change you workdirectory and run init.sh  :
  # cd $TMP_NUCLIAS_CONNECT 
  #. init.sh '
+ . $TMP_NUCLIAS_CONNECT/'init.sh'
