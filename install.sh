@@ -21,5 +21,4 @@ cd $TMP_NUCLIAS_CONNECT_config
 curl -o systemconfig.json https://raw.githubusercontent.com/lizhimin99/mytest/master/config/systemconfig.json
 cd $TMP_NUCLIAS_CONNECT
 echo -e "\033Config files Download complete\033"
-echo -e "\033STEP2 :Please change you workdirectory and run init.sh  :\033# cd $TMP_NUCLIAS_CONNECT \033#. init.sh \033"
-. $TMP_NUCLIAS_CONNECT"/init.sh "$user $name
+sudo sh init.sh $user $name
