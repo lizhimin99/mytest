@@ -21,4 +21,4 @@ cd $TMP_NUCLIAS_CONNECT_config
 curl -o systemconfig.json https://raw.githubusercontent.com/lizhimin99/mytest/master/config/systemconfig.json
 cd $TMP_NUCLIAS_CONNECT
 echo -e "\033[36mConfig files Download complete\033[0m"
-sudo sh init.sh $user $name
+sudo sh init.sh $user $pass
