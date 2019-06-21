@@ -6,7 +6,8 @@ TMP_NUCLIAS_CONNECT_config=/tmp/nuclias_connect/config
 if [ ! -d $TMP_NUCLIAS_CONNECT ];then
   mkdir -p $TMP_NUCLIAS_CONNECT
 fi
-
+echo  "your username is "$user
+echo  "your password is "$pass
 cd $TMP_NUCLIAS_CONNECT
 echo -e "\033STEP 1: Start download config files\033"
 curl -o init.sh https://raw.githubusercontent.com/lizhimin99/mytest/master/init.sh
