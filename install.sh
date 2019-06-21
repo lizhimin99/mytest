@@ -9,7 +9,7 @@ fi
 echo  "your username is "$user
 echo  "your password is "$pass
 cd $TMP_NUCLIAS_CONNECT
-echo -e "\033STEP 1: Start download config files\033"
+echo -e "\033[36m STEP 1: Start download config files\033[0m"
 curl -o init.sh https://raw.githubusercontent.com/lizhimin99/mytest/master/init.sh
 curl -o docker-compose.yml https://raw.githubusercontent.com/lizhimin99/mytest/master/docker-compose.yml
 curl -o entrypoint-initdb.sh https://raw.githubusercontent.com/lizhimin99/mytest/master/entrypoint-initdb.sh
@@ -20,5 +20,5 @@ fi
 cd $TMP_NUCLIAS_CONNECT_config
 curl -o systemconfig.json https://raw.githubusercontent.com/lizhimin99/mytest/master/config/systemconfig.json
 cd $TMP_NUCLIAS_CONNECT
-echo -e "\033Config files Download complete\033"
+echo -e "\033[36mConfig files Download complete\033[0m"
 sudo sh init.sh $user $name
