@@ -5,7 +5,8 @@ web_port=30001
 core_port=8443
 SHELL_FOLDER=$(cd "$(dirname "$0")";pwd)
                                                                                                                         
-                                                                                                                        
+ echo "your username is "$user   
+  echo "your password is "$pwd1 
 echo "                                                                                                                        
 
                                                                                                                         
